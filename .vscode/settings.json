@@ -1,0 +1,7 @@
+{
+    "files.watcherExclude": {
+        "**/target": true
+    },
+    "dbt.enableNewLineagePanel": false,
+    "dbt.perspectiveTheme": "Pro Dark"
+}

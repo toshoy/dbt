@@ -1,0 +1,66 @@
+version: 2
+models:
+  - name: TEST_FactMTD_EXCEL_UFR_DBT
+    description: UFR Data for MTD and EXL
+    quote: true
+    quoting:
+      identifier: true
+    tests:
+      - dbt_utils.equal_rowcount:
+          compare_model: source('DEV_AIDA', 'TEST_FactMTD_EXCEL_UFR')
+      - dbt_utils.unique_combination_of_columns:
+          combination_of_columns:
+            - SKU_KEY
+            - LOC_ID
+            - DIVISION
+            - DATE_AS_OF
+            - MRKT_CHNL_KEY
+          quote_columns: true
+    columns:
+      - name: source
+        description: Datasource Schema/Table
+        data_type: varchar
+      - name: date_as_of
+        description: End date on Wednesday of each week
+        data_type: date
+      - name: sku_key
+        description: Item number material identification key
+        data_type: varchar
+      - name: sku_desc
+        description: Item number material identification key
+        data_type: varchar
+      - name: ufr_qty
+        description: Quantity filled
+        data_type: number
+      - name: ufr_gsv
+        description: Quantity filled * Unit GSV
+        data_type: number
+      - name: ufr_net_order_qty
+        description: Quanity ordered
+        data_type: number
+      - name: ufr_net_order_gsv
+        description: Quantity ordered * Unit GSV
+        data_type: number
+      - name: otif_net_order_qty
+        description: "On time in full quanity ordered "
+        data_type: number
+      - name: otif_qty
+        description: On time in full quanity filled
+        data_type: number
+      - name: otif_net_order_gsv
+        description: On time in full quanity ordered * Unit GSV
+        data_type: number
+      - name: otif_gsv
+        description: On time in full quanity filled * Unit GSV
+        data_type: number
+      - name: division
+        description: Customer division
+        data_type: varchar
+      - name: loc_id
+        description: Location
+        data_type: varchar
+      - name: mrkt_chnl_key
+        description: Demand group normalized key
+        data_type: varchar
+      - name: rcrd_hash_key
+        data_type: varchar

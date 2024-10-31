@@ -1,0 +1,285 @@
+﻿Account,Group,Act_Desc
+A40116,Gross Sales,Sales Freight Income
+A40110,Gross Sales,Invoice Sales
+A40111,Gross Sales,FOB Invoiced Sales
+A40210,Gross Sales,Product Sales Export
+A40610,Gross Sales,Install Revenue
+A40710,Gross Sales,Franchise Revenue
+A40310,Gross Sales,Rental Sales
+A40950,Gross Sales,Trade Sales BU Allocation
+A40910,Royalties,Royalty Revenue
+A40115,RSA,RSA and Price Adjustments
+A40120,RSA,Destroy in Field
+A41210,Returns,Returns Export
+A41110,Returns,Returns Domestic
+A43112,Rebates,Rebates
+A43111,Fill Rate Fines,Fill Rate Fines
+A43110,Discounts and Allowances,Discounts and Allow Domestic
+A43116,Discounts and Allowances,Co-op Advertising
+A43210,Discounts and Allowances,Discounts and Allow Export
+A43115,GTN Other,Cash Discounts Domestic
+A43215,GTN Other,Cash Discounts Export
+A43117,GTN Other,Sales Adjustments - Other
+A60710,Freight,COS-Freight Outbound
+A60110,Std. Mtl. Cost,Std Matl COS-Domestic
+A60111,Std. Mtl. Cost,Std Matl COS-FOB
+A60114,Std. Mtl. Cost,Merchandising COS
+A60116,Std. Mtl. Cost,Free Goods COS
+A60210,Std. Mtl. Cost,Std Matl COS-Export
+A61110,Std. Mtl. Cost,COS-Trd Dom Labor
+A85172,OCOS,Mfg Svc Education & Training
+A84290,OCOS,Shop Direct Labor Prod Credit
+A85950,OCOS,Mfg Svc Allocation Offset
+A83740,OCOS,COS-Service
+A85300,OCOS,Mfg Svc Supplies & Matl Oth
+A85125,OCOS,Mfg Svc Hrly OT Premium
+A85178,OCOS,Mfg Facilities Management
+A83999,OCOS,Other Manufacturing Exp
+A85445,OCOS,Mfg Svc Equip Lease >1yr
+A77680,OCOS,Sourcing Var (make/buy)
+A85200,OCOS,Mfg Svc Other Utilities
+A85305,OCOS,Mfg Svc Packaging Exp
+A82123,OCOS,Transport Inbound - Duty
+A76320,OCOS,LIFO/FIFO/Other
+A85150D,OCOS,Mfg Svc Payroll Taxes Direct
+A84390,OCOS,Mfg Svc Manuf Prod Cred (Std)
+A85145D,OCOS,Mfg Svc Medical Direct
+A84100,OCOS,Material Scrap and Usage
+A85140B,OCOS,Mfg Svc Benefits Base
+A85183,OCOS,Mfg Svc Recruiting
+A82124,OCOS,Freight Absorption
+A85191I,OCOS,Mfg Svc Temp Labor Indirect
+A85139I,OCOS,Mfg Svc Special Comp Indirect
+A85412,OCOS,Mfg Svc Software Amort
+A85400,OCOS,Mfg Svc Taxes & Insurance
+A82120,OCOS,Transport Inbound
+A85159B,OCOS,Mfg Svc Other Benefits Base
+A77100,OCOS,Purch Price Variance
+A85110B,OCOS,Mfg Svc Salaried Wages Base
+A85170,OCOS,Mfg Svc Meetings & Conf
+A85110I,OCOS,Mfg Svc Salaried Wages Indirect
+A85100D,OCOS,Mfg Svc Hrly Wages Direct
+A85420,OCOS,Mfg Svc Rent
+A85139D,OCOS,Mfg Svc Special Comp Direct
+A85331,OCOS,Mfg Svc Promo Matl & Disc
+A85192,OCOS,Mfg Svc Other Svc & Fees
+A83510,OCOS,Cash Disc On Purchases
+A76999,OCOS,Valuation Adj - Other
+A85110D,OCOS,Mfg Svc Salaried Wages Direct
+A85150I,OCOS,Mfg Svc Payroll Taxes Indirect
+A82810,OCOS,Scrap and Waste Recovery
+A82299,OCOS,OCOS - Other
+A85160,OCOS,Mfg Svc Office Supplies
+A85141B,OCOS,Mfg Svc Retirement Plan Base
+A85145I,OCOS,Mfg Svc Medical Indirect
+A85310,OCOS,Mfg Svc - Prod Eng Matl/Prototype
+A85490,OCOS,Mfg Svc COS Redist Exp
+A77115,OCOS,PPV Exchange Manual
+A85130D,OCOS,Mfg Svc Hrly Unappl. Direct
+A85951,OCOS,Mfg Svc Plant Var Allocation Offset
+A85203,OCOS,Mfg Svc Gas
+A76400,OCOS,Prov for Full Absorb
+A85130I,OCOS,Mfg Svc Hrly Unappl. Indirect
+A85130B,OCOS,Mfg Svc Hrly Unappl. Base
+A82121,OCOS,MRO Paid Freight
+A85201,OCOS,Mfg Svc Electricity
+A82499,OCOS,Warranty Costs
+A85163,OCOS,Mfg Svc T&E
+A85139B,OCOS,Mfg Svc Special Comp Base
+A77110,OCOS,PPV Exchange System
+A85146B,OCOS,Mfg Svc Workers Comp Base
+A82140,OCOS,Currency Translation Inv
+A85191D,OCOS,Mfg Svc Temp Labor Direct
+A85146D,OCOS,Mfg Svc Workers Comp Direct
+A85164,OCOS,Mfg Svc Relo
+A85100I,OCOS,Mfg Svc Hrly Wages Indirect
+A85313,OCOS,Mfg Svc Research Matl & Svc
+A82122,OCOS,Premium Freight
+A85220,OCOS,Mfg Svc Repairs & Rearrangement
+A82130,OCOS,Interfacility Freight
+A85199,OCOS,Mfg Svc Misc Other
+A85204,OCOS,Mfg Svc Water
+A76211,OCOS,Book to Physical Actual
+A85145B,OCOS,Mfg Svc Medical Base
+A85191B,OCOS,Mfg Svc Temp Labor Base
+A85405,OCOS,Mfg Svc Prod Liabl Insur Exp
+A85186,OCOS,Mfg Svc Consulting Fees
+A76110,OCOS,Prov for Excess and Obsolete
+A82313,OCOS,Rework/Recon
+A85210,OCOS,Mfg Svc Voice Communications
+A85301,OCOS,Mfg Svc Plant Supplies
+A85314,OCOS,Mfg Svc Exp Tooling
+A85410,OCOS,Mfg Svc Depr Exp
+A85159D,OCOS,Mfg Svc Other Benefits Direct
+A85800,OCOS,Corp COGS Alloc In
+A82128,OCOS,Demurrage & Detention
+A76130,OCOS,Obsolescence
+A85150B,OCOS,Mfg Svc Payroll Taxes Base
+A85100B,OCOS,Mfg Svc Hrly Wages Base
+A85140D,OCOS,Mfg Svc Benefits Direct
+A85426,OCOS,Mfg Svc ST Lease/Rent-Fact Equip
+A85142B,OCOS,Mfg Svc Defined Benefit Pension Service Cost Base
+A85182,OCOS,MFG Fleet
+A85146I,OCOS,Mfg Svc Workers Comp Indirect
+A82210,OCOS,Pre-Manufacturing Costs
+A85125D,OCOS,Mfg Svc Hrly OT Premium Direct
+A85142I,OCOS,Mfg Svc Defined Benefit Pension Service Cost Indirect
+A85142D,OCOS,Mfg Svc Defined Benefit Pension Service Cost Direct
+A82414,OCOS,Warranty Parts
+A85358,OCOS,Mfg Svc CoOp
+A82418,OCOS,Warranty Repair-Svc Center
+A82311,OCOS,Kitting/Labelling Variances
+A85900,OCOS,Corp COGS Alloc Out
+A85230,OCOS,Mfg Svc Hardware and Software (IT)
+A82312,OCOS,Dekitting Variances
+A82411,OCOS,Warranty Exp-No App Defect
+A82117,OCOS,Product Return Costs
+A84112,OCOS,Substitution Variance
+A85120D,OCOS,Mfg Svc Salaried OT Direct
+A85121,OCOS,Mfg Svc - Sales People Incentives
+A82416,OCOS,Warranty Freight
+A76140,OCOS,Merchadising Provision
+A82125,OCOS,Duty Absorption
+A84210,OCOS,Shop Direct Labor Payroll Cost
+A83730,OCOS,ESOP-COS
+A85181,OCOS,Mfg Svc Donations
+A83110,OCOS,Amort of Patents
+A82412,OCOS,Warranty Std Cost-Ret Scrap
+A85233,OCOS,Mfg Svc Non-Capitalized Labor (IT)
+A85202,OCOS,Mfg Svc Oil
+A82399,OCOS,Service Cost General
+A85415,OCOS,Mfg Svc PC/CAD Depr Exp
+A83720,OCOS,PPV Hedge Contracts
+A85231,OCOS,Mfg Svc Licenses and SaaS Fees (IT)
+A83120,OCOS,Amort of Licenses
+A85211,OCOS,Mfg Svc Data Communications
+A85120I,OCOS,Mfg Svc Salaried OT Indirect
+A82415,OCOS,Warranty Recovery
+A83721,OCOS,Derivative - COS - Commodities
+A76210,OCOS,Book to Physical Provision
+A85953,OCOS,OCOS Allocation Offset 3
+A85428,OCOS,Mfg Svc ST Lease/Rent <1yr
+A85141D,OCOS,Mfg Svc Retirement Plan Direct
+A82126,OCOS,Transportation Inbound - Tariff
+A85141I,OCOS,Mfg Svc Retirement Plan Indirect
+A82112,OCOS,Recycling
+A85125I,OCOS,Mfg Svc Hrly OT Premium Indirect
+A85120B,OCOS,Mfg Svc Salaried OT Base
+A76213,OCOS,Conversions/Rework/Scrap
+A85232,OCOS,Mfg Svc Other Tech Costs (IT)
+A85159I,OCOS,Mfg Svc Other Benefits Indirect
+A84111,OCOS,Process Yield
+A76214,OCOS,Missing / Damaged Goods
+A85952,OCOS,Mfg Svc Plant Var Allocation Offset-GEM
+A82417,OCOS,Warranty Recharges
+A82999,OCOS,Base Costs Other
+A82127,OCOS,Premium Sea Freight
+A85197,OCOS,Mfg Professional Fees MSP Providers
+A85234,OCOS,Mfg Svc Outside Services (IT)
+A85140I,OCOS,Mfg Svc Benefits Indirect
+A91461,SG&A,SG&A Operating Exp-Pension Credit
+A93310,SG&A,SG&A Prod Eng Matl/Prototype
+A93346,SG&A,SG&A Photography / Packaging
+A91410,SG&A,Other Operating Expense
+A93935,SG&A,AR AP Remeasurement for Trade SGA
+A93203,SG&A,SG&A Utilities-Gas
+A93125,SG&A,SG&A Overtime Premium
+A93416,SG&A,SG&A Third Party Distribution Costs
+A93210,SG&A,SG&A Voice Communications
+A93344,SG&A,SG&A Digital Advertising
+A93915,SG&A,Cash Remeasurement SGA
+A91500,SG&A,SG&A Bad Debt Expense
+A93420,SG&A,SG&A Rent-Building
+A93920,SG&A,Loan Remeasurements SGA
+A93400,SG&A,SG&A Taxes and Insurance
+A91462,SG&A,Supplemental RAP Expense
+A93360,SG&A,SG&A Merchandising
+A93211,SG&A,SG&A Data Communications
+A93150,SG&A,SG&A Payroll Taxes
+A93314,SG&A,SG&A Expensed Tooling
+A93350,SG&A,SG&A Promo - TV and Radio
+A93372,SG&A,SG&A Free Good & Give Aways
+A93232,SG&A,SG&A Other Tech Costs (IT)
+A93202,SG&A,SG&A Utilities-Oil
+A93200,SG&A,SG&A Other Utilities
+A93999,SG&A,SGA Misc Other
+A93334,SG&A,SG&A Shows & Conventions
+A93910,SG&A,Netting trades remeasurement includes reval forwards SGA
+A93195,SG&A,SG&A Patents
+A93499,SG&A,SGA Other Operating Expense
+A93332,SG&A,SG&A Category Management
+A93183,SG&A,SG&A Recruiting
+A93410,SG&A,SG&A Deprec/Amortization
+A93170,SG&A,SG&A Meeting and Conferences
+A93331,SG&A,SG&A Market Research
+A93428,SG&A,SG&A Other ST Lease (<1yr)
+A93440,SG&A,IT Labor Capitalization
+A93313,SG&A,SG&A Research Materials & Srvcs
+A93164,SG&A,SG&A Relocation
+A93305,SG&A,SG&A Packaging Expense
+A92100,SG&A,SG&A Exp Allocation
+A93399,SG&A,SG&A Non-Fixed Other
+A93100,SG&A,SG&A Straight Time
+A93800,SG&A,SG&A Corporate Allocations In
+A93300,SG&A,SG&A Plant Supplies
+A93179,SG&A,SG&A Acquisition Related
+A93197,SG&A,SG&A Professional Fees MSP Providers
+A93196,SG&A,SG&A Compliance Fees
+A93146,SG&A,SG&A Workers Compensation
+A93142,SG&A,SG&A Defined Benefit Pension Service Cost
+A93145,SG&A,SG&A Medical
+A93490,SG&A,SG&A Redistributed Expenses
+A93172,SG&A,SG&A Training
+A93340,SG&A,SG&A Promo - Dir Mail/Cat/Mags
+A93181,SG&A,SG&A Donations
+A93230,SG&A,SG&A Hardware and Software (IT)
+A91463,SG&A,SRAP Derivative Expense
+A93411,SG&A,SG&A Equalization of Expense
+A93905,SG&A,AP AR affiliate remeasurement for anything outside of netting SGA
+A93520,SG&A,Derivatives Gain Loss SGA
+A93194,SG&A,SG&A Legal Fees
+A93231,SG&A,SG&A Licenses and SaaS Fees (IT)
+A93376,SG&A,SG&A Public Relations
+A93233,SG&A,SG&A Non-Capitalized Labor (IT)
+A93371,SG&A,SG&A Other Promotion
+A93352,SG&A,SG&A Conferences & Events
+A93193,SG&A,SG&A Audit Fees
+A93950,SG&A,SG&A Allocation Offset
+A93240,SG&A,SG&A External Sales Commissions
+A93358,SG&A,SG&A CoOp
+A93178,SG&A,SG&A Facilities Management
+A93953,SG&A,SG&A Allocation Offset 3
+A93220,SG&A,SG&A Repairs and Equipment
+A93343,SG&A,SG&A Printing
+A93409,SG&A,SG&A FX Business Reclassification
+A93951,SG&A,SG&A Allocation Offset R&D
+A93373,SG&A,SG&A Demo Tools
+A93182,SG&A,SG&A Fleet
+A93204,SG&A,SG&A Utilities-Water
+A91495,SG&A,SG&A Stock Based Comp
+A93201,SG&A,SG&A Utilities-Electricity
+A93163,SG&A,SG&A Travel and Entertainment
+A93141,SG&A,SG&A Retirement Plans
+A93186,SG&A,SG&A Consulting Fees
+A93130,SG&A,SG&A Other Hourly
+A93121,SG&A,SG&A Internal Sales Incentive
+A93900,SG&A,SG&A Corporate Allocations Out
+A93374,SG&A,SG&A Sponsorship
+A91415,SG&A,ESOP - SG&A
+A93159,SG&A,SG&A Misc Other Benefits
+A93412,SG&A,SG&A Software Amortization
+A93375,SG&A,SG&A Customer Training
+A91460,SG&A,SG&A Suppl Pension Expense
+A93139,SG&A,SG&A Other Compensation
+A93140,SG&A,SG&A Benefits
+A93341,SG&A,SG&A Media Advertising
+A93191,SG&A,SG&A Temporary and Contract Labor
+A93120,SG&A,SG&A Salaried Overtime
+A93445,SG&A,SG&A Equip Rent (>1yr)
+A93234,SG&A,SG&A Outside Services (IT)
+A93160,SG&A,SG&A Office Supplies
+A93415,SG&A,SG&A Computer/PC/CAD Deprec
+A93110,SG&A,SG&A Salaried Wages
+A93299,SG&A,SG&A Other Prof Services & Fees
+A93330,SG&A,SG&A Marketing
+A93342,SG&A,SG&A Media Production

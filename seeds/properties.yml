@@ -1,0 +1,7 @@
+version: 2
+
+seeds:
+  - name: TEST_account_mapping
+    config: 
+      delimiter: ","
+      quote_columns: true

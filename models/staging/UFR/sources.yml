@@ -1,0 +1,28 @@
+version: 2
+sources:
+  - name: PROD_AIDA
+    database: PROD_AIDA
+    schema: AIRFREIGHT
+    tables:
+      - name: GLOBAL_EXECUTIVE_DATA
+        quoting:
+          identifier: true
+      - name: MATERIAL_MASTER
+        quoting:
+          identifier: true
+  - name: DEV_AIDA
+    database: DEV_AIDA
+    schema: RGM_PRICE_TRACKER
+    tables:
+      - name: TEST_DimCON_SKU
+        quoting:
+          identifier: true
+      - name: TEST_DimCON_MARKET_CHANNEL
+        quoting:
+          identifier: true
+      - name: TEST_Support_Facts_NPD_SKU_Incr
+        quoting:
+          identifier: true
+      - name: TEST_FactUFR
+        quoting:
+          identifier: true

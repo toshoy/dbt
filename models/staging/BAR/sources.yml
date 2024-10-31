@@ -1,0 +1,9 @@
+version: 2
+sources:
+  - name: TEST_MARTS
+    database: TEST_MARTS
+    schema: FINANCE
+    tables:
+      - name: VW_EPM_ALL_SCENARIOS
+        quoting:
+          identifier: true

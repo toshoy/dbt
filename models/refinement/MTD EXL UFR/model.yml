@@ -1,0 +1,56 @@
+version: 2
+models:
+  - name: _1_Transform_dates
+    description: Transform the shipment, invoice and fiscal to the real dates
+    columns:
+      - name: ship_invoice_key
+        data_type: number
+        description: rest
+      - name: sbu_key
+        data_type: number
+        description: sbu_key (number)
+      - name: order_key
+        data_type: number
+      - name: shipment_date_key
+        data_type: number
+      - name: invoice_key
+        data_type: number
+      - name: invoice_date_key
+        data_type: number
+      - name: customer_key
+        data_type: number
+      - name: ship_to_geography_key
+        data_type: number
+      - name: item_key
+        data_type: number
+      - name: item_acctg_class_key
+        data_type: number
+      - name: business_team_key
+        data_type: number
+      - name: ship_from_warehouse_key
+        data_type: number
+      - name: territory_key
+        data_type: number
+      - name: shipped_units
+        data_type: number
+      - name: shipped_dollars
+        data_type: number
+      - name: ordered_units
+        description: Qty of orders
+        data_type: number
+      - name: ordered_dollars
+        data_type: number
+      - name: source
+        data_type: varchar
+      - name: ship_date
+        data_type: date
+      - name: order_date
+        data_type: date
+      - name: Date
+        description: Fiscal date
+        quote: true
+        data_type: date
+      - name: f_week_start_date
+        data_type: date
+      - name: f_year
+        data_type: number

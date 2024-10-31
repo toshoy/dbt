@@ -1,0 +1,18 @@
+version: 2
+models:
+  - name: TEST_FactUFR_DBT
+    description: UFR Data
+    quote: true
+    quoting:
+      identifier: true
+    tests:
+      - dbt_utils.equal_rowcount:
+          compare_model: source('DEV_AIDA', 'TEST_FactUFR')
+      - dbt_utils.unique_combination_of_columns:
+          combination_of_columns:
+            - DATE_AS_OF
+            - SKU_KEY
+            - MRKT_CHNL_KEY
+            - LOC_KEY
+            - SOURCE
+          quote_columns: true

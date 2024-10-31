@@ -1,0 +1,50 @@
+version: 2
+
+sources:
+  - name: PROD_RAW
+    database: PROD_RAW
+    schema: MTD
+    tables:
+      - name: VW_F_SHIPMENTSINVOICES
+        quoting:
+          identifier: true
+      - name: VW_D_ITEMS
+        quoting:
+          identifier: true
+      - name: VW_D_DATES
+        quoting:
+          identifier: true
+      - name: VW_D_ORDERS
+        quoting:
+          identifier: true
+      - name: VW_D_CUSTOMERS
+        quoting:
+          identifier: true
+      - name: VW_D_CUSTBYDIV
+        quoting:
+          identifier: true
+      - name: VW_D_WAREHOUSE
+        quoting:
+          identifier: true
+  - name: PROD_RAW
+    database: PROD_RAW
+    schema: EXCEL
+    tables:
+      - name: VW_NOCUFROTIF_HISTORY
+        description: 'PROD_RAW.EXCEL.VW_NOCUFROTIF only has current year. PROD_RAW.EXCEL.VW_NOCUFROTIF_HISTORY is used to extract most recent LOADDTS for each year week. Counts matched b/w history and base table for 2024 (JM validated 08/06/2024)'
+        quoting:
+          identifier: true
+  - name: DEV_AIDA
+    database: DEV_AIDA
+    schema: RGM_PRICE_TRACKER
+    tables:
+      - name: DimCALENDAR
+        quoting:
+          identifier: true
+      - name: LOOKUP_MTDEXL_MRKT_CHNL_KEY
+        quoting:
+          identifier: true
+      - name: TEST_FactMTD_EXCEL_UFR
+        identifier: TEST_FactMTD_EXCEL_UFR
+        quoting:
+          identifier: true

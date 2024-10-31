@@ -4,6 +4,10 @@ with source as (
       CUSTOMER,
       PRODUCT,
       SHIP_TOGEOGRAPHY,
+      PRODUCT_DESCRIPTION,
+      PRODUCT_LEVEL4,
+      PRODUCT_LEVEL5,
+      PRODUCT_LEVEL6,
       SUM(AMOUNT) AS AMOUNT      
       from {{ source('TEST_MARTS', 'VW_EPM_ALL_SCENARIOS') }}
       where currency = 'USD' AND SCENARIO = 'OEP_Actual' AND "VERSION" = 'PostAlloc'
@@ -18,6 +22,10 @@ source_mapping as (
       scr.PRODUCT,
       scr.AMOUNT ,
       scr.SHIP_TOGEOGRAPHY,
+      scr.PRODUCT_DESCRIPTION,
+      scr.PRODUCT_LEVEL4,
+      scr.PRODUCT_LEVEL5,
+      scr.PRODUCT_LEVEL6,
       COALESCE(UPPER(map."Group"), 'NO MAPPING') as "Group"
       FROM source as scr
       LEFT JOIN mapping as map ON scr.ACCOUNT = map."Account"
@@ -27,6 +35,10 @@ source_mapping as (
       CUSTOMER,
       PRODUCT,
       SHIP_TOGEOGRAPHY,
+      PRODUCT_DESCRIPTION,
+      PRODUCT_LEVEL4,
+      PRODUCT_LEVEL5,
+      PRODUCT_LEVEL6,
       COALESCE(ROUND("'DISCOUNTS AND ALLOWANCES'",2),0) AS "DISCOUNTS AND ALLOWANCES",
       COALESCE(ROUND("'FILL RATE FINES'",2),0) AS "FILL RATE FINES",
       COALESCE(ROUND("'FREIGHT'",2),0) AS "FREIGHT",
@@ -49,6 +61,10 @@ TOTALS AS (
       CUSTOMER,
       PRODUCT,
       SHIP_TOGEOGRAPHY,
+      PRODUCT_DESCRIPTION,
+      PRODUCT_LEVEL4,
+      PRODUCT_LEVEL5,
+      PRODUCT_LEVEL6,
       "GROSS SALES",
       "RETURNS",
       "RSA",

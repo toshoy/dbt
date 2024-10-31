@@ -57,7 +57,7 @@ source_mapping as (
       GROUP BY ALL),
 TOTALS AS (
       SELECT
-      DATE_AS_OF,
+      DATE_AS_OF, --git test 
       CUSTOMER,
       PRODUCT,
       SHIP_TOGEOGRAPHY,

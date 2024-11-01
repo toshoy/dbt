@@ -42,7 +42,7 @@ models:
         description: Quantity ordered * Unit GSV
         data_type: number
       - name: otif_net_order_qty
-        description: "On time in full quanity ordered "
+        description: "On time in full quanity ordered"
         data_type: number
       - name: otif_qty
         description: On time in full quanity filled
@@ -57,10 +57,11 @@ models:
         description: Customer division
         data_type: varchar
       - name: loc_id
-        description: '{{ doc("LOC_ID") }}'
+        description: 'Show a location'
         data_type: varchar
       - name: mrkt_chnl_key
         description: Demand group normalized key
         data_type: varchar
       - name: rcrd_hash_key
         data_type: varchar
+        description: unique identifier per each row

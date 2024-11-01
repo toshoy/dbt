@@ -16,3 +16,6 @@ models:
             - LOC_KEY
             - SOURCE
           quote_columns: true
+    columns:
+      - name: LOC_KEY
+        description: '{{ doc("LOC_ID") }}'

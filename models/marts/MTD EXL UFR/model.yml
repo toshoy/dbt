@@ -57,7 +57,7 @@ models:
         description: Customer division
         data_type: varchar
       - name: loc_id
-        description: Location
+        description: '{{ doc("LOC_ID") }}'
         data_type: varchar
       - name: mrkt_chnl_key
         description: Demand group normalized key

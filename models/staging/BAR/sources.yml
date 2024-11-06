@@ -13,4 +13,4 @@ sources:
     tables:
       - name: VW_PROFIT
         quoting:
-          identifier: true
+          identifier: false

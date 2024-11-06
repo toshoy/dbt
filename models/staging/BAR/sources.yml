@@ -7,3 +7,10 @@ sources:
       - name: VW_EPM_ALL_SCENARIOS
         quoting:
           identifier: true
+  - name: OPG_PL
+    database: DEV_AIDA
+    schema: OPG_PL
+    tables:
+      - name: VW_PROFIT
+        quoting:
+          identifier: true

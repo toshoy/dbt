@@ -1,5 +1,7 @@
 with source as (
-      select DATE_FROM_PARTS(RIGHT(YEAR,2)::INT+2000, TO_CHAR(TO_DATE(PERIOD, 'MON'), 'MM')::INT , 1)  AS "DATE_AS_OF",
+      select 
+      YEAR,
+      PERIOD,
       ACCOUNT,
       CUSTOMER,
       PRODUCT,
@@ -9,15 +11,17 @@ with source as (
       PRODUCT_LEVEL5,
       PRODUCT_LEVEL6,
       SUM(AMOUNT) AS AMOUNT      
-      from {{ source('TEST_MARTS', 'VW_EPM_ALL_SCENARIOS') }}
+      from {{ ref('_stg__EPM_ALL_SCENARIOS') }}
       where currency = 'USD' AND SCENARIO = 'OEP_Actual' AND "VERSION" = 'PostAlloc'
       GROUP BY ALL
 ),
 mapping as (
       SELECT *
-      FROM {{ ref('TEST_account_mapping') }}), 
+      FROM {{ ref('TEST_account_mapping') }}),
 source_mapping as (
-      SELECT scr.DATE_AS_OF,
+      SELECT 
+      YEAR,
+      PERIOD,
       scr.CUSTOMER,
       scr.PRODUCT,
       scr.AMOUNT ,
@@ -28,10 +32,10 @@ source_mapping as (
       scr.PRODUCT_LEVEL6,
       COALESCE(UPPER(map."Group"), 'NO MAPPING') as "Group"
       FROM source as scr
-      LEFT JOIN mapping as map ON scr.ACCOUNT = map."Account"
-) , pivot as (
+      LEFT JOIN mapping as map ON scr.ACCOUNT = map."Account")
+,pivot as (
       select 
-      DATE_AS_OF,
+      DATE_FROM_PARTS(RIGHT(YEAR,2)::INT+2000, TO_CHAR(TO_DATE(PERIOD, 'MON'), 'MM')::INT , 1)  AS "DATE_AS_OF",
       CUSTOMER,
       PRODUCT,
       SHIP_TOGEOGRAPHY,
@@ -57,7 +61,7 @@ source_mapping as (
       GROUP BY ALL),
 TOTALS AS (
       SELECT
-      DATE_AS_OF, --git test 
+      DATE_AS_OF,
       CUSTOMER,
       PRODUCT,
       SHIP_TOGEOGRAPHY,
@@ -87,7 +91,6 @@ TOTALS AS (
 FINAL AS (
       SELECT *
       FROM TOTALS
-      WHERE ("DISCOUNTS AND ALLOWANCES"+"FILL RATE FINES"+"FREIGHT"+"GROSS SALES"+"GTN OTHER"+"NO MAPPING"+ "OCOS"+"REBATES"+"RETURNS"+"ROYALTIES"+"RSA"+"SG&A"+"STD. MTL. COST") <> 0 )
+      WHERE ("DISCOUNTS AND ALLOWANCES"+"FILL RATE FINES"+"FREIGHT"+"GROSS SALES"+"GTN OTHER"+ "OCOS"+"REBATES"+"RETURNS"+"ROYALTIES"+"RSA"+"SG&A"+"STD. MTL. COST") <> 0 ) -- no mapping removed from the filter
 SELECT *
 FROM FINAL
-

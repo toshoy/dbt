@@ -1,0 +1,11 @@
+version: 2
+models:
+  - name: TEST_BAR_STD_COST_FREIGHT
+    quote: true
+    quoting:
+      identifier: true
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          combination_of_columns:
+            - PRODUCT_MATERIAL_CODE
+          quote_columns: true

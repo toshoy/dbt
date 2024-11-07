@@ -48,3 +48,7 @@ sources:
         identifier: TEST_FactMTD_EXCEL_UFR
         quoting:
           identifier: true
+      - name: FactDEMAND_FORECAST
+        identifier: FactDEMAND_FORECAST
+        quoting:
+          identifier: true

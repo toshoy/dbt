@@ -63,12 +63,14 @@ TOTALS AS (
       SELECT
       DATE_AS_OF,
       CUSTOMER,
-      PRODUCT,
+      TT.PRODUCT,
+      DM."GPP_DIVISION_CODE",
+      DM."GPP_DIVISION_DESCR",
       SHIP_TOGEOGRAPHY,
-      PRODUCT_DESCRIPTION,
-      PRODUCT_LEVEL4,
-      PRODUCT_LEVEL5,
-      PRODUCT_LEVEL6,
+      --PRODUCT_DESCRIPTION,
+      --PRODUCT_LEVEL4,
+      --PRODUCT_LEVEL5,
+      --PRODUCT_LEVEL6,
       "GROSS SALES",
       "RETURNS",
       "RSA",
@@ -86,7 +88,8 @@ TOTALS AS (
       "OCOS",
       "SG&A",
       "NO MAPPING"
-      FROM pivot
+      FROM pivot AS TT
+      LEFT JOIN {{ ref('TEST_BAR_DIV_MAPPING') }} AS DM ON TT.PRODUCT = DM.PRODUCT
 ),
 FINAL AS (
       SELECT *

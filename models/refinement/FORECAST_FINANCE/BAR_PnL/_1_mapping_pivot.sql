@@ -12,7 +12,7 @@ with source as (
       PRODUCT_LEVEL6,
       SUM(AMOUNT) AS AMOUNT      
       from {{ ref('_stg__EPM_ALL_SCENARIOS') }}
-      where currency = 'USD' AND SCENARIO = 'OEP_Actual' AND "VERSION" = 'PostAlloc'
+      where currency = 'USD' AND SCENARIO = 'OEP_Actual' AND "VERSION" = 'PostAlloc' and len(PERIOD) = 3
       GROUP BY ALL
 ),
 mapping as (

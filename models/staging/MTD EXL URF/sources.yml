@@ -52,3 +52,11 @@ sources:
         identifier: FactDEMAND_FORECAST
         quoting:
           identifier: true
+      - name: DimCON_PRODUCT_GPP
+        identifier: DimCON_PRODUCT_GPP
+        quoting:
+          identifier: true
+      - name: DimCON_MARKET_CHANNEL
+        identifier: DimCON_MARKET_CHANNEL
+        quoting:
+          identifier: true

@@ -62,7 +62,9 @@ source_mapping as (
 TOTALS AS (
       SELECT
       DATE_AS_OF,
-      CUSTOMER,
+      CONCAT(DM."GPP_DIVISION_CODE",CM.COE_Market_Channel) AS BAR_KEY,
+      UPPER(TT.CUSTOMER) AS "CUSTOMER",
+      CM.COE_Market_Channel AS "MARKET_CHANNEL",
       TT.PRODUCT,
       DM."GPP_DIVISION_CODE",
       DM."GPP_DIVISION_DESCR",
@@ -90,6 +92,7 @@ TOTALS AS (
       "NO MAPPING"
       FROM pivot AS TT
       LEFT JOIN {{ ref('TEST_BAR_DIV_MAPPING') }} AS DM ON TT.PRODUCT = DM.PRODUCT
+      LEFT JOIN {{ ref('TEST_BAR_CUS_MAPPING') }} AS CM ON UPPER(TT.CUSTOMER) = CM.CUSTOMER
 ),
 FINAL AS (
       SELECT *

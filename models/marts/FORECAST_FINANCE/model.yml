@@ -9,3 +9,4 @@ models:
           combination_of_columns:
             - PRODUCT_MATERIAL_CODE
           quote_columns: true
+

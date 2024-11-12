@@ -3,33 +3,24 @@ with source as (
       YEAR,
       PERIOD,
       ACCOUNT,
+      ENTITY,
       CUSTOMER,
       PRODUCT,
-      SHIP_TOGEOGRAPHY,
-      PRODUCT_DESCRIPTION,
-      PRODUCT_LEVEL4,
-      PRODUCT_LEVEL5,
-      PRODUCT_LEVEL6,
       SUM(AMOUNT) AS AMOUNT      
-      from {{ ref('_stg__EPM_ALL_SCENARIOS') }}
-      where currency = 'USD' AND SCENARIO = 'OEP_Actual' AND "VERSION" = 'PostAlloc' and len(PERIOD) = 3
-      GROUP BY ALL
-),
+      from {{ ref('_stg_test_CR_epm_IN_dev_aida') }} --{{ ref('_stg__EPM_ALL_SCENARIOS') }} temporary fix for the performance issue
+      --where currency = 'USD' AND SCENARIO = 'OEP_Actual' AND "VERSION" = 'PostAlloc' and len(PERIOD) = 3
+      GROUP BY ALL),
 mapping as (
       SELECT *
       FROM {{ ref('TEST_account_mapping') }}),
 source_mapping as (
       SELECT 
-      YEAR,
-      PERIOD,
+      scr.YEAR,
+      scr.PERIOD,
       scr.CUSTOMER,
       scr.PRODUCT,
-      scr.AMOUNT ,
-      scr.SHIP_TOGEOGRAPHY,
-      scr.PRODUCT_DESCRIPTION,
-      scr.PRODUCT_LEVEL4,
-      scr.PRODUCT_LEVEL5,
-      scr.PRODUCT_LEVEL6,
+      scr.AMOUNT,
+      scr.ENTITY,
       COALESCE(UPPER(map."Group"), 'NO MAPPING') as "Group"
       FROM source as scr
       LEFT JOIN mapping as map ON scr.ACCOUNT = map."Account")
@@ -38,11 +29,7 @@ source_mapping as (
       DATE_FROM_PARTS(RIGHT(YEAR,2)::INT+2000, TO_CHAR(TO_DATE(PERIOD, 'MON'), 'MM')::INT , 1)  AS "DATE_AS_OF",
       CUSTOMER,
       PRODUCT,
-      SHIP_TOGEOGRAPHY,
-      PRODUCT_DESCRIPTION,
-      PRODUCT_LEVEL4,
-      PRODUCT_LEVEL5,
-      PRODUCT_LEVEL6,
+      ENTITY,
       COALESCE(ROUND("'DISCOUNTS AND ALLOWANCES'",2),0) AS "DISCOUNTS AND ALLOWANCES",
       COALESCE(ROUND("'FILL RATE FINES'",2),0) AS "FILL RATE FINES",
       COALESCE(ROUND("'FREIGHT'",2),0) AS "FREIGHT",
@@ -61,14 +48,16 @@ source_mapping as (
       GROUP BY ALL),
 TOTALS AS (
       SELECT
-      DATE_AS_OF,
+      DATE_AS_OF as F_MONTH_DATE,
       CONCAT(DM."GPP_DIVISION_CODE",CM.COE_Market_Channel) AS BAR_KEY,
       UPPER(TT.CUSTOMER) AS "CUSTOMER",
       CM.COE_Market_Channel AS "MARKET_CHANNEL",
       TT.PRODUCT,
+      TT.ENTITY,
+      ENT.BAR_REGION,
+      ENT.BAR_ENT_KEY,
       DM."GPP_DIVISION_CODE",
       DM."GPP_DIVISION_DESCR",
-      SHIP_TOGEOGRAPHY,
       "GROSS SALES",
       "RETURNS",
       "RSA",
@@ -89,10 +78,13 @@ TOTALS AS (
       FROM pivot AS TT
       LEFT JOIN {{ ref('TEST_BAR_DIV_MAPPING') }} AS DM ON TT.PRODUCT = DM.PRODUCT
       LEFT JOIN {{ ref('TEST_BAR_CUS_MAPPING') }} AS CM ON UPPER(TT.CUSTOMER) = CM.CUSTOMER
+      LEFT JOIN {{ ref('_stg_ent_map_finance') }} AS ent on UPPER(TT.ENTITY) = UPPER(ent.BAR_ENT)
 ),
 FINAL AS (
-      SELECT *
-      FROM TOTALS
+      SELECT TT.*,
+      MAP.REGION 
+      FROM TOTALS AS TT
+      LEFT JOIN {{ ref('TEST_BAR_ENT_MAP') }} AS MAP ON TT.BAR_ENT_KEY = MAP.BAR_ENT_KEY
       WHERE ("DISCOUNTS AND ALLOWANCES"+"FILL RATE FINES"+"FREIGHT"+"GROSS SALES"+"GTN OTHER"+ "OCOS"+"REBATES"+"RETURNS"+"ROYALTIES"+"RSA"+"SG&A"+"STD. MTL. COST") <> 0 ) -- no mapping removed from the filter
 SELECT *
 FROM FINAL

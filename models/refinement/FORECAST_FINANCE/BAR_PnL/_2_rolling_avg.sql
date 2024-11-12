@@ -1,7 +1,7 @@
 with sources as (
     select *,
-    (select DATEADD(MONTH,{{var('rolling_avg')}},MAX(DATE_AS_OF)) AS MIN_DATE from {{ ref('TEST_BAR_PnL') }}) as MIN_DATE,
-    (select max(DATE_AS_OF) from {{ref('TEST_BAR_PnL')}}) AS "MAX_DATE"
+    (select DATEADD(MONTH,{{var('rolling_avg')}},MAX(F_MONTH_DATE)) AS MIN_DATE from {{ ref('TEST_BAR_PnL') }}) as MIN_DATE,
+    (select max(F_MONTH_DATE) from {{ref('TEST_BAR_PnL')}}) AS "MAX_DATE"
     from {{ ref('TEST_BAR_PnL') }}),
 filtering as (
     SELECT
@@ -13,7 +13,7 @@ filtering as (
     SUM("GTN OTHER") AS "GTN OTHER {{var('rolling_avg')}} MONTHS",
     SUM("TOTAL GTN") AS "TOTAL GTN {{var('rolling_avg')}} MONTHS",
     FROM sources
-    where DATE_AS_OF >= MIN_DATE
+    where F_MONTH_DATE >= MIN_DATE
     GROUP BY ALL),
 FINAL AS (
     SELECT *,

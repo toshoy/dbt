@@ -60,3 +60,7 @@ sources:
         identifier: DimCON_MARKET_CHANNEL
         quoting:
           identifier: true
+      - name: TESTCR
+        identifier: TESTCR
+        quoting:
+          identifier: true

@@ -28,6 +28,10 @@ pnl_join as (
     pnl."RSA_%_{{var('rolling_avg')}}_MONTHS",
     pnl."TOTAL_GTN_%_{{var('rolling_avg')}}_MONTHS"
     from bar_key as dmd
-    left join {{ ref('_2_rolling_avg') }} as pnl on dmd.bar_key = pnl.bar_key )
+    left join {{ ref('_2_rolling_avg') }} as pnl on dmd.bar_key = pnl.BAR_KEY_ADJ ),
+final as (
+    select *
+    from pnl_join
+)
 SELECT *
-FROM pnl_join
+FROM final

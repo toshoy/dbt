@@ -17,3 +17,11 @@ sources:
       - name: ENT_MAP
         quoting:
           identifier: true
+
+  - name: PROD_RAW
+    database: PROD_RAW
+    schema: DCT
+    tables:
+      - name: DCT_BAR_ENTITY_ATTR
+        quoting:
+          identifier: true

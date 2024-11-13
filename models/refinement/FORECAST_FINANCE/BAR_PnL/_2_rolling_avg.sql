@@ -6,6 +6,7 @@ with sources as (
 filtering as (
     SELECT
     bar_key,
+    BAR_KEY_ADJ,
     sum("GROSS SALES") AS "GROSS SALES {{var('rolling_avg')}} MONTHS",
     SUM(RSA) AS "RSA {{var('rolling_avg')}} MONTHS",
     SUM("DISCOUNTS AND ALLOWANCES") AS "DaA {{var('rolling_avg')}} MONTHS",

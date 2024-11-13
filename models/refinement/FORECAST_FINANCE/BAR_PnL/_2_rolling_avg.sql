@@ -5,7 +5,7 @@ with sources as (
     from {{ ref('TEST_BAR_PnL') }}),
 filtering as (
     SELECT
-    bar_key,
+    --bar_key,
     BAR_KEY_ADJ,
     sum("GROSS SALES") AS "GROSS SALES {{var('rolling_avg')}} MONTHS",
     SUM(RSA) AS "RSA {{var('rolling_avg')}} MONTHS",

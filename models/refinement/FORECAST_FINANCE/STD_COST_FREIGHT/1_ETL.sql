@@ -29,10 +29,16 @@ final as (
     "MAX_DATE_AS_OF",
     "NET_SHIP_QTY",
     "COS_ST_COST",
+    "GSV_W_O_RSA",
     IFF(div0("COS_ST_COST","NET_SHIP_QTY") < 0 , 0 ,round(div0("COS_ST_COST","NET_SHIP_QTY"),3))  as "UNIT_STD_MAT_COST", --excluding negative values
     "FREIGHT",
-    "GSV_W_O_RSA",
-    IFF(div0("FREIGHT","GSV_W_O_RSA") < 0 , 0 ,round(div0("FREIGHT","GSV_W_O_RSA"),4))  as "%_FREIGHT" --excluding negative values
+    CASE 
+    WHEN "FREIGHT" > "GSV_W_O_RSA" THEN 0
+    ELSE 
+    IFF(div0("FREIGHT","GSV_W_O_RSA") < 0 , 0 ,round(div0("FREIGHT","GSV_W_O_RSA"),4)) 
+    END AS "%_FREIGHT" --excluding negative values
     from trans)
 SELECT *
 FROM final
+order by "%_FREIGHT"  desc 
+{# where product_material_code = 'DW4802' #}

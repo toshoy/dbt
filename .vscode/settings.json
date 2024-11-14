@@ -3,5 +3,5 @@
         "**/target": true
     },
     "dbt.enableNewLineagePanel": true,
-    "dbt.perspectiveTheme": "Pro Dark"
+    "dbt.perspectiveTheme": "Monokai"
 }

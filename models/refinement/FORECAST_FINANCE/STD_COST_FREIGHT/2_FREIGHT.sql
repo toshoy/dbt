@@ -33,5 +33,4 @@ date_filter as (
     END AS "%_FREIGHT" --excluding negative values
     from trans)
 SELECT *
-FROM source
-where product_material_code = 'U60000008'
+FROM final

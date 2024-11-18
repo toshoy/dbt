@@ -13,17 +13,16 @@ with cost as (
     COS_ST_COST,
     UNIT_STD_MAT_COST,
     GSV_W_O_RSA,
-    GSV_W_O_RSA,
-    "%_FREIGHT"
+    "FREIGHT",
+    "%_FREIGHT",
+    div0("FREIGHT",NET_SHIP_QTY) as "UNIT_OB_FREIGHT_COST"
     from cost
     full outer join freight on cost.PRODUCT_MATERIAL_CODE = freight.PRODUCT_MATERIAL_CODE)
 SELECT *
 FROM final
 
 
-
-{# 
-with source as (
+{# with source as (
       select *,
         DATE_FROM_PARTS(FISCAL_YEAR,FISCAL_MONTH, 1) AS "DATE_AS_OF" ,
         round(cos_st_cost,2) AS "COS_ST_COST_FIX"
@@ -58,11 +57,10 @@ final as (
     IFF(div0("COS_ST_COST","NET_SHIP_QTY") < 0 , 0 ,round(div0("COS_ST_COST","NET_SHIP_QTY"),3))  as "UNIT_STD_MAT_COST", --excluding negative values
     "FREIGHT",
     CASE 
-    WHEN "FREIGHT" > "GSV_W_O_RSA" THEN 0
-    ELSE 
-    IFF(div0("FREIGHT","GSV_W_O_RSA") < 0 , 0 ,round(div0("FREIGHT","GSV_W_O_RSA"),4)) 
+        WHEN "FREIGHT" > "GSV_W_O_RSA" THEN 0
+        ELSE 
+        IFF(div0("FREIGHT","GSV_W_O_RSA") < 0 , 0 ,round(div0("FREIGHT","GSV_W_O_RSA"),4)) 
     END AS "%_FREIGHT" --excluding negative values
     from trans)
 SELECT *
-FROM final
-order by "%_FREIGHT"  desc  #}
+FROM final #}

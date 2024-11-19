@@ -20,6 +20,7 @@ with cost as (
     full outer join freight on cost.PRODUCT_MATERIAL_CODE = freight.PRODUCT_MATERIAL_CODE)
 SELECT *
 FROM final
+order by GSV_W_O_RSA
 
 
 {# with source as (

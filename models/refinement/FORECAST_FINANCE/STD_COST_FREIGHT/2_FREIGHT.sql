@@ -11,7 +11,7 @@ date_filter as (
     from source
     WHERE "DATE_AS_OF" >= (select DATEADD(MONTH,{{var('rolling_avg')}},MAX("DATE_AS_OF")) AS MIN_DATE FROM source)
 )
-,trans as (
+,trans as ( 
     SELECT 
     product_material_code,
     MIN("DATE_AS_OF") AS "MIN_DATE_AS_OF",

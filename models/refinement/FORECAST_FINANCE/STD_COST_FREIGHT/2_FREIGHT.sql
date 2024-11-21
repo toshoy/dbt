@@ -1,7 +1,8 @@
 with source as (
       select *,
         DATE_FROM_PARTS(FISCAL_YEAR,FISCAL_MONTH, 1) AS "DATE_AS_OF" 
-        from {{ ref('_stg__VW_PROFIT') }}),
+        from {{ ref('_stg__VW_PROFIT') }}
+        WHERE CO_OB_FREIGHT <> 0),
         {# where CO_OB_FREIGHT < NET_SHIP_GSV_W_O_RSA), --IMPORTANT CONDITIONAL FOR EXLUDING SKU WITH GSA < FREIGHT #}
 date_filter as (
     select *,
